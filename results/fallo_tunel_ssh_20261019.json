@@ -1,0 +1,61 @@
+{
+  "timestamp": "2026-10-19T09:27:54",
+  "targets": [
+    {
+      "name": "gemma4:e4b",
+      "url": "http://127.0.0.1:11434/v1/chat/completions",
+      "api_style": "openai"
+    },
+    {
+      "name": "gemma:latest",
+      "url": "http://127.0.0.1:11435/v1/chat/completions",
+      "api_style": "openai"
+    }
+  ],
+  "prompt": "Resume en 3 frases que es un modelo de mezcla de expertos (MoE) y por que se usa para inferencia local.",
+  "params": {
+    "max_tokens": 900,
+    "temperature": 0.2,
+    "timeout": 900.0
+  },
+  "results": [
+    {
+      "model": "gemma4:e4b",
+      "url": "http://127.0.0.1:11434/v1/chat/completions",
+      "api_style": "openai",
+      "ok": false,
+      "latency_s": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "tokens_source": null,
+      "tokens_per_s": null,
+      "chars": null,
+      "lines": null,
+      "backend": null,
+      "finish_reason": null,
+      "reasoning_chars": null,
+      "used_reasoning_as_answer": null,
+      "response": null,
+      "error": "error de conexion a http://127.0.0.1:11434/v1/chat/completions: ConnectionError"
+    },
+    {
+      "model": "gemma:latest",
+      "url": "http://127.0.0.1:11435/v1/chat/completions",
+      "api_style": "openai",
+      "ok": false,
+      "latency_s": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "tokens_source": null,
+      "tokens_per_s": null,
+      "chars": null,
+      "lines": null,
+      "backend": null,
+      "finish_reason": null,
+      "reasoning_chars": null,
+      "used_reasoning_as_answer": null,
+      "response": null,
+      "error": "error de conexion a http://127.0.0.1:11435/v1/chat/completions: ConnectionError"
+    }
+  ]
+}

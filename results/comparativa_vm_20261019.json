@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-10-19T09:21:25",
+  "targets": [
+    {
+      "name": "gemma4:e4b",
+      "url": "http://127.0.0.1:11434/v1/chat/completions",
+      "api_style": "openai"
+    },
+    {
+      "name": "gemma:latest",
+      "url": "http://127.0.0.1:11435/v1/chat/completions",
+      "api_style": "openai"
+    }
+  ],
+  "prompt": "Resume en 3 frases que es un modelo de mezcla de expertos (MoE) y por que se usa para inferencia local.",
+  "params": {
+    "max_tokens": 400,
+    "temperature": 0.2,
+    "timeout": 600.0
+  },
+  "results": [
+    {
+      "model": "gemma4:e4b",
+      "url": "http://127.0.0.1:11434/v1/chat/completions",
+      "api_style": "openai",
+      "ok": true,
+      "latency_s": 160.689,
+      "tokens_in": 43,
+      "tokens_out": 400,
+      "tokens_source": "api",
+      "tokens_per_s": 2.49,
+      "chars": 1586,
+      "lines": 22,
+      "backend": null,
+      "response": "Here's a thinking process to arrive at the suggested summary:\n\n1.  **Analyze the Request:**\n    *   **Topic:** Mixture of Experts (MoE) model.\n    *   **Format:** 3 sentences (concise summary).\n    *   **Content Requirement 1:** What is an MoE? (Definition/Mechanism).\n    *   **Content Requirement 2:** Why is it used for local inference? (Application/Benefit).\n\n2.  **Deconstruct MoE (What is it?):**\n    *   *Core Idea:* Instead of one massive network doing everything, MoE uses several smaller, specialized networks (\"experts\").\n    *   *Mechanism:* A \"router\" or \"gating network\" decides which experts are relevant for a given input token/task.\n    *   *Benefit (General):* Allows the model to be very large (many parameters) while only activating a small fraction of them for any specific task (sparse activation).\n\n3.  **Deconstruct MoE for Local Inference (Why is it used locally?):**\n    *   *Local Inference Context:* Running the model on a consumer device (phone, laptop) with limited resources (RAM, compute).\n    *   *The Problem MoE Solves:* Large models are slow and resource-intensive.\n    *   *The MoE Solution:* By activating only a few experts, the *computational cost* (FLOPs) per token is kept low, even if the total parameter count is high. This makes the model faster and more efficient for local deployment.\n\n4.  **Drafting the 3 Sentences (Iterative Refinement):**\n\n    *   *Sentence 1 (Definition):* Needs to explain the core concept (experts + router).\n        *   *Draft:* MoE is a neural network architecture where multiple specialized sub-networks (experts",
+      "error": null
+    },
+    {
+      "model": "gemma:latest",
+      "url": "http://127.0.0.1:11435/v1/chat/completions",
+      "api_style": "openai",
+      "ok": true,
+      "latency_s": 15.502,
+      "tokens_in": 49,
+      "tokens_out": 67,
+      "tokens_source": "api",
+      "tokens_per_s": 4.32,
+      "chars": 354,
+      "lines": 1,
+      "backend": null,
+      "response": "Un modelo de mezcla de expertos (MoE) es un modelo estadístico que combina las predicciones de múltiples expertos individuales para crear una predicción más precisa. Se utiliza para la inferencia local porque puede capturar la variabilidad en las predicciones de los expertos y proporcionar inferencias precisas en los datos específicos de la aplicación.",
+      "error": null
+    }
+  ]
+}

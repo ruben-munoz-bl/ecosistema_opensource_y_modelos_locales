@@ -1,0 +1,61 @@
+{
+  "timestamp": "2026-10-19T09:33:28",
+  "targets": [
+    {
+      "name": "gemma4:e4b",
+      "url": "http://127.0.0.1:11434/v1/chat/completions",
+      "api_style": "openai"
+    },
+    {
+      "name": "gemma:latest",
+      "url": "http://127.0.0.1:11435/v1/chat/completions",
+      "api_style": "openai"
+    }
+  ],
+  "prompt": "Resume en 3 frases que es un modelo de mezcla de expertos (MoE) y por que se usa para inferencia local.",
+  "params": {
+    "max_tokens": 900,
+    "temperature": 0.2,
+    "timeout": 900.0
+  },
+  "results": [
+    {
+      "model": "gemma4:e4b",
+      "url": "http://127.0.0.1:11434/v1/chat/completions",
+      "api_style": "openai",
+      "ok": true,
+      "latency_s": 249.934,
+      "tokens_in": 43,
+      "tokens_out": 763,
+      "tokens_source": "api",
+      "tokens_per_s": 3.05,
+      "chars": 804,
+      "lines": 5,
+      "backend": null,
+      "finish_reason": "stop",
+      "reasoning_chars": 2426,
+      "used_reasoning_as_answer": false,
+      "response": "Un Modelo de Mezcla de Expertos (MoE) es una arquitectura de IA que combina múltiples sub-redes especializadas, llamadas \"expertos\". Un mecanismo de puerta (gating) decide dinámicamente qué expertos son más relevantes para procesar una entrada específica, activando solo una pequeña fracción de los parámetros totales. Esto permite que el modelo sea masivamente grande sin incurrir en el costo computacional de activar todos sus parámetros en cada inferencia.\n\n**¿Por qué se usa para inferencia local?**\n\nSu eficiencia en la activación de parámetros lo hace ideal para la inferencia local, ya que reduce drásticamente la latencia y el consumo de recursos. Al no tener que calcular con todo el modelo, se puede ejecutar en dispositivos con limitaciones de hardware, como computadoras personales o móviles.",
+      "error": null
+    },
+    {
+      "model": "gemma:latest",
+      "url": "http://127.0.0.1:11435/v1/chat/completions",
+      "api_style": "openai",
+      "ok": true,
+      "latency_s": 20.734,
+      "tokens_in": 49,
+      "tokens_out": 64,
+      "tokens_source": "api",
+      "tokens_per_s": 3.09,
+      "chars": 335,
+      "lines": 1,
+      "backend": null,
+      "finish_reason": "stop",
+      "reasoning_chars": 0,
+      "used_reasoning_as_answer": false,
+      "response": "Un modelo de mezcla de expertos (MoE) es un modelo estadístico que combina las predicciones de varios expertos individuales para crear una predicción más precisa. Se utiliza para la inferencia local porque puede capturar el conocimiento local de los expertos, lo que permite realizar inferencias precisas a partir de datos específicos.",
+      "error": null
+    }
+  ]
+}
